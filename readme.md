@@ -1,17 +1,20 @@
-## Programming with Google Go Specialization
-
-This repository contains the code for the "Programming with Google Go Specialization" on Coursera. The specialization
-consists of several modules, each focusing on different aspects of programming in Go.
-
 <p align="center">
   <img src="src/go-logo.png" alt="Go Logo" width="30%">
 </p>
 
-### Modules
+<h1 align="center">Programming with Google Go Specialization</h1>
 
-1. **Getting Started with Go**
+This repository contains the code for the "Programming with Google Go Specialization" on Coursera. The specialization
+consists of several modules, each focusing on different aspects of programming in Go.
 
-## Assignment Descriptions
+Specialization: [Programming with Google Go Specialization](https://www.coursera.org/specializations/google-golang)
+
+Modules:
+1. [Getting Started with Go](https://www.coursera.org/learn/golang-getting-started?specialization=google-golang)
+2. [Functions, Methods, and Interfaces in Go](https://www.coursera.org/learn/golang-functions-methods?specialization=google-golang)
+3. [Concurrency in Go](https://www.coursera.org/learn/golang-concurrency?specialization=google-golang)
+
+## Getting Started with Go
 
 The module focuses on introducing the basics of Go programming language. Whether you have prior experience in languages
 like C, Python, or Java, this module will help you grasp the fundamental elements of Go and develop your programming
@@ -26,11 +29,17 @@ skills further.
 | 5          | [makejson.go](./1-getting-started/assignment-5/makejson.go)                                                   | A program that prompts the user to enter a name and an address, creates a JSON object with the provided data, and prints it to the console.    |
 | 6          | [read.go](./1-getting-started/assignment-6/read.go) and [data.txt](./1-getting-started/assignment-6/data.txt) | A program that reads names from a text file (specified by the user) and prints them along with their first and last names.                     |
 
-2. **Functions, Methods, and Interfaces in Go**
+## Functions, Methods, and Interfaces in Go
 
-(Upcoming)
+The module aims to deepen the understanding of the Go programming language by exploring functions, methods, and
+interfaces. The topics covered include the implementation of functions, function types, object-orientation in Go,
+methods, and class instantiation.
 
-3. **Concurrency in Go**
+| Assignment | File Name                                                                      | Description                                                                                                           |
+|------------|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
+| 1          | [bubble-sort.go](./2-functions-methods-interfaces/assignment-1/bubble-sort.go) | A program that reads up to 10 integers from the user, performs bubble sort on the slice, and prints the sorted slice. |
+
+## Concurrency in Go
 
 (Upcoming)
 

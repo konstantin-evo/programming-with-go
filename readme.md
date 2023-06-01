@@ -35,9 +35,10 @@ The module aims to deepen the understanding of the Go programming language by ex
 interfaces. The topics covered include the implementation of functions, function types, object-orientation in Go,
 methods, and class instantiation.
 
-| Assignment | File Name                                                                      | Description                                                                                                           |
-|------------|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
-| 1          | [bubble-sort.go](./2-functions-methods-interfaces/assignment-1/bubble-sort.go) | A program that reads up to 10 integers from the user, performs bubble sort on the slice, and prints the sorted slice. |
+| Assignment | File Name                                                                                  | Description                                                                                                                                                                                                                                                                                                  |
+|------------|--------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1          | [bubble-sort.go](./2-functions-methods-interfaces/assignment-1/bubble-sort.go)             | A program that reads up to 10 integers from the user, performs bubble sort on the slice, and prints the sorted slice.                                                                                                                                                                                        |
+| 2          | [displacement_calc.go](./2-functions-methods-interfaces/assignment-2/displacement_calc.go) | A program that calculates displacement based on time, acceleration, initial velocity, and initial displacement. It prompts the user to enter values for acceleration, initial velocity, and initial displacement. Then, it generates a displacement function and prompts the user to enter a value for time. |
 
 ## Concurrency in Go
 

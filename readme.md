@@ -1,17 +1,21 @@
-## Programming with Google Go Specialization
-
-This repository contains the code for the "Programming with Google Go Specialization" on Coursera. The specialization
-consists of several modules, each focusing on different aspects of programming in Go.
-
 <p align="center">
   <img src="src/go-logo.png" alt="Go Logo" width="30%">
 </p>
 
-### Modules
+<h1 align="center">Programming with Google Go Specialization</h1>
 
-1. **Getting Started with Go**
+This repository contains the code for the "Programming with Google Go Specialization" on Coursera. The specialization
+consists of several modules, each focusing on different aspects of programming in Go.
 
-## Assignment Descriptions
+Specialization: [Programming with Google Go Specialization](https://www.coursera.org/specializations/google-golang)
+
+Modules:
+
+1. [Getting Started with Go](https://www.coursera.org/learn/golang-getting-started?specialization=google-golang)
+2. [Functions, Methods, and Interfaces in Go](https://www.coursera.org/learn/golang-functions-methods?specialization=google-golang)
+3. [Concurrency in Go](https://www.coursera.org/learn/golang-concurrency?specialization=google-golang)
+
+## Getting Started with Go
 
 The module focuses on introducing the basics of Go programming language. Whether you have prior experience in languages
 like C, Python, or Java, this module will help you grasp the fundamental elements of Go and develop your programming
@@ -26,11 +30,178 @@ skills further.
 | 5          | [makejson.go](./1-getting-started/assignment-5/makejson.go)                                                   | A program that prompts the user to enter a name and an address, creates a JSON object with the provided data, and prints it to the console.    |
 | 6          | [read.go](./1-getting-started/assignment-6/read.go) and [data.txt](./1-getting-started/assignment-6/data.txt) | A program that reads names from a text file (specified by the user) and prints them along with their first and last names.                     |
 
-2. **Functions, Methods, and Interfaces in Go**
+## Functions, Methods, and Interfaces in Go
 
-(Upcoming)
+The module aims to deepen the understanding of the Go programming language by exploring functions, methods, and
+interfaces. The topics covered include the implementation of functions, function types, object-orientation in Go,
+methods, and class instantiation.
 
-3. **Concurrency in Go**
+<details>
+  <summary>Assignment 1 - Bubble Sort </summary>
+
+# Integer Bubble Sort
+
+The Integer Bubble Sort program is a command-line application that allows users to enter up to 10 integers separated by
+spaces. It then sorts the integers using the bubble sort algorithm and displays the sorted array.
+
+## Usage
+
+1. Run the program.
+2. Enter up to 10 integers separated by spaces when prompted.
+3. The program will validate the input and sort the integers using the bubble sort algorithm.
+4. The sorted array will be displayed.
+
+## Algorithm
+
+The program uses the bubble sort algorithm to sort the integers. The bubble sort algorithm works by repeatedly stepping
+through the list, comparing adjacent elements, and swapping them if they are in the wrong order. This process is
+repeated until the list is sorted.
+
+## Example
+
+```
+Enter up to 10 integers (separated by spaces):
+> 9 5 2 7 1
+
+Array after sorting: [1 2 5 7 9]
+```
+
+## Limitations
+
+- The program only accepts up to 10 integers. If more than 10 numbers are entered, the program will truncate the input
+  to contain only the first 10 numbers.
+- The program assumes valid input, where each input is a valid integer separated by spaces. It does not handle
+  non-integer inputs or inputs with incorrect format.
+
+</details>
+
+<details>
+  <summary>Assignment 2 - Displacement Calculator </summary>
+
+# Displacement Calculator
+
+The Displacement Calculator is a command-line application that allows users to calculate displacement based on time,
+acceleration, initial velocity, and initial displacement. The program prompts the user to enter values for acceleration,
+initial velocity, and initial displacement, and then computes the displacement after a specified time.
+
+## Usage
+
+1. Run the program.
+2. Enter the values for acceleration, initial velocity, and initial displacement when prompted.
+3. Enter the desired time for which you want to calculate the displacement.
+4. The program will calculate the displacement using the provided values and display the result.
+
+## Formula
+
+The displacement calculation is based on the following formula:
+
+```
+displacement = 0.5 * acceleration * time^2 + initialVelocity * time + initialDisplacement
+```
+
+## Example
+
+```
+Enter acceleration:
+2.5
+Enter initial velocity:
+1.0
+Enter initial displacement:
+-3.0
+Enter time:
+4.0
+
+Displacement after 4 seconds: 37.0
+```
+
+## Limitations
+
+- The program assumes valid numeric input for acceleration, initial velocity, initial displacement, and time. It does
+  not handle non-numeric inputs or inputs with incorrect format.
+
+</details>
+
+<details>
+  <summary>Assignment 3 - OOP in Go</summary>
+
+A program that allows the user to interactively query information about different animals. It demonstrates the usage of
+maps, structs, and methods in Go.
+
+The program defines a set of predefined animals with their attributes (food, locomotion, and noise). It prompts the user
+to enter an animal name and the information they want to know (eat, move, or speak). Then, it displays the corresponding
+information about the animal.
+
+The table below showcases a variety of animals along with their respective characteristics.
+
+| Animal | Food Eaten | Locomotion Method | Spoken Sound |
+|--------|------------|-------------------|--------------|
+| cow    | grass      | walk              | moo          |
+| bird   | worms      | fly               | peep         |
+| snake  | mice       | slither           | hsss         |
+
+Once the program is running, you can start entering commands. Each command should consist of an animal name and the
+desired information, separated by a space.
+
+Here's an example of how you can interact with the program:
+
+   ```
+   > cow eat
+   Grass
+   > bird move
+   Fly
+   ```
+
+</details>
+
+<details>
+  <summary>Assignment 4 - Polymorphism in Go</summary>
+
+The fourth assignment extends the functionality of the previous assignment by allowing the user to dynamically create
+new animals and add them to the existing set of animals.
+
+The table below showcases a variety of animals along with their respective characteristics.
+
+| Animal | Food Eaten | Locomotion Method | Spoken Sound |
+|--------|------------|-------------------|--------------|
+| cow    | grass      | walk              | moo          |
+| bird   | worms      | fly               | peep         |
+| snake  | mice       | slither           | hsss         |
+
+The program prompts the user to enter a command ("newanimal" or "query"), an animal name, and additional details based
+on the command.
+
+* For the "`newanimal`" command, it creates a new animal of the specified type and adds it to the animals map.
+* For the "`query`" command, it retrieves the requested information about the specified animal.
+
+To interact with the program, use the following format:
+
+  ```
+> newanimal <animal_name> <details>
+> query <animal_name> <details>
+  ```
+
+For the `newanimal` command, the `details` field represents the type of the animal to create (e.g., "cow", "bird", "
+snake").
+
+For the `query` command, the `details` field represents the information requested about the animal (e.g., "eat", "
+move", "speak").
+
+Here's an example of how you can interact with the program:
+
+  ```
+> newanimal cow moomoo
+> Created it!
+> newanimal bird tweetie
+> Created it!
+> query cow move
+> walk
+> query bird speak
+> peep
+  ```
+
+</details>
+
+## Concurrency in Go
 
 (Upcoming)
 
@@ -59,10 +230,10 @@ To run the assignments in the "Getting Started with Go" module, follow these ste
    go run ./1-getting-started/assignment-1/hello.go
    ```
 
-   Replace the file path with the path to the desired assignment.
+Replace the file path with the path to the desired assignment.
 
-   Note: Some assignments may require additional files (e.g., `data.txt`). Make sure to provide the necessary input
-   files when prompted.
+Note: Some assignments may require additional files (e.g., `data.txt`). Make sure to provide the necessary input
+files when prompted.
 
 5. Follow the instructions or input the required values when prompted by the program.
 

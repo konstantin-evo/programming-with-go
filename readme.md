@@ -203,7 +203,28 @@ Here's an example of how you can interact with the program:
 
 ## Concurrency in Go
 
-(Upcoming)
+This module provides an introduction to concurrent programming in Go, focusing on the roles of channels and goroutines
+in implementing concurrency. The topics covered include writing goroutines and implementing channels for communication
+between goroutines.
+
+<details>
+  <summary>Assignment 1 - Race conditions</summary>
+
+This Go program showcases a race condition scenario when two goroutines are executed concurrently. It provides a simple
+demonstration of how a race condition can occur and affect the outcome of the program.
+
+The race condition in this program occurs due to the concurrent access and modification of the shared variable `counter`
+by the `incrementCounter` and `printCounter` goroutines. Both goroutines read and write to the counter variable without
+any synchronization mechanism.
+
+During execution, the `incrementCounter` goroutine reads the current value of `counter`, increments it, and writes the
+updated value back. At the same time, the `printCounter` goroutine reads the value of `counter` and prints it.
+
+Since there is no synchronization between the goroutines, the interleaving of their operations can lead to unexpected
+results. The race condition manifests when both goroutines read the counter value simultaneously, resulting in
+inconsistencies in the printed output.
+
+</details>
 
 ### Workspace Configuration
 

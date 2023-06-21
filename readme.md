@@ -226,6 +226,22 @@ inconsistencies in the printed output.
 
 </details>
 
+<details>
+  <summary>Assignment 2 - Parallel merge sort</summary>
+
+This program implements parallel merge sort to efficiently sort a series of integers. It takes input from the user,
+which should be a space-separated series of integers. The program divides the input into four subarrays and uses
+goroutines to sort each subarray concurrently. Finally, it merges the sorted subarrays to obtain the sorted array.
+
+By dividing the input into four subarrays and sorting them concurrently using goroutines, the program takes advantage of
+parallelism to improve performance. However, the performance gain depends on the size of the input and the hardware
+resources available.
+
+Note that the program assumes the input contains a valid series of integers separated by spaces. It performs minimal
+error checking and may produce unexpected results if the input is not properly formatted.
+
+</details>
+
 ### Workspace Configuration
 
 The repository also includes a Visual Studio Code workspace configuration file (`programming-with-go.code-workspace`).

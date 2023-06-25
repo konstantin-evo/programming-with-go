@@ -242,6 +242,41 @@ error checking and may produce unexpected results if the input is not properly f
 
 </details>
 
+<details>
+  <summary>Assignment 3 - Dining Philosophers</summary>
+
+
+The Dining Philosophers problem involves a group of philosophers sitting around a circular table, with a plate of food
+and a chopstick placed between each pair of adjacent philosophers. The philosophers alternate between thinking and
+eating. To eat, a philosopher must pick up both the left and right chopsticks. However, the chopsticks can only be
+picked up by one philosopher at a time.
+
+<div align="center">
+  <img src="src/dining-philosophers.png" alt="Dining Philosophers" width="50%">
+</div>
+
+The challenge is to design a solution that prevents deadlocks and starvation, ensuring that each philosopher can eat
+without causing a deadlock or starvation for others.
+
+**Solution Overview**
+
+The simulation utilizes goroutines and channels in Go to model the behavior of the philosophers. The main components of
+the solution include:
+
+- The `Chopstick` struct represents a chopstick and is implemented with a mutex to ensure exclusive access.
+
+- The `philosopher` struct represents a philosopher and contains an ID, as well as pointers to their left and right
+  chopsticks.
+
+- The `eat` method defines the behavior of a philosopher. The philosopher acquires a slot at the `host` channel, locks
+  their left and right chopsticks, eats for a specified duration, unlocks the chopsticks, and signals the host that they
+  have finished eating.
+
+- The `main` function initializes the chopsticks and philosophers, launches goroutines for each philosopher, and waits
+  for all philosophers to finish eating using a `sync.WaitGroup`.
+
+</details>
+
 ### Workspace Configuration
 
 The repository also includes a Visual Studio Code workspace configuration file (`programming-with-go.code-workspace`).

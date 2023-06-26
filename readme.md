@@ -203,7 +203,79 @@ Here's an example of how you can interact with the program:
 
 ## Concurrency in Go
 
-(Upcoming)
+This module provides an introduction to concurrent programming in Go, focusing on the roles of channels and goroutines
+in implementing concurrency. The topics covered include writing goroutines and implementing channels for communication
+between goroutines.
+
+<details>
+  <summary>Assignment 1 - Race conditions</summary>
+
+This Go program showcases a race condition scenario when two goroutines are executed concurrently. It provides a simple
+demonstration of how a race condition can occur and affect the outcome of the program.
+
+The race condition in this program occurs due to the concurrent access and modification of the shared variable `counter`
+by the `incrementCounter` and `printCounter` goroutines. Both goroutines read and write to the counter variable without
+any synchronization mechanism.
+
+During execution, the `incrementCounter` goroutine reads the current value of `counter`, increments it, and writes the
+updated value back. At the same time, the `printCounter` goroutine reads the value of `counter` and prints it.
+
+Since there is no synchronization between the goroutines, the interleaving of their operations can lead to unexpected
+results. The race condition manifests when both goroutines read the counter value simultaneously, resulting in
+inconsistencies in the printed output.
+
+</details>
+
+<details>
+  <summary>Assignment 2 - Parallel merge sort</summary>
+
+This program implements parallel merge sort to efficiently sort a series of integers. It takes input from the user,
+which should be a space-separated series of integers. The program divides the input into four subarrays and uses
+goroutines to sort each subarray concurrently. Finally, it merges the sorted subarrays to obtain the sorted array.
+
+By dividing the input into four subarrays and sorting them concurrently using goroutines, the program takes advantage of
+parallelism to improve performance. However, the performance gain depends on the size of the input and the hardware
+resources available.
+
+Note that the program assumes the input contains a valid series of integers separated by spaces. It performs minimal
+error checking and may produce unexpected results if the input is not properly formatted.
+
+</details>
+
+<details>
+  <summary>Assignment 3 - Dining Philosophers</summary>
+
+
+The Dining Philosophers problem involves a group of philosophers sitting around a circular table, with a plate of food
+and a chopstick placed between each pair of adjacent philosophers. The philosophers alternate between thinking and
+eating. To eat, a philosopher must pick up both the left and right chopsticks. However, the chopsticks can only be
+picked up by one philosopher at a time.
+
+<div align="center">
+  <img src="src/dining-philosophers.png" alt="Dining Philosophers" width="50%">
+</div>
+
+The challenge is to design a solution that prevents deadlocks and starvation, ensuring that each philosopher can eat
+without causing a deadlock or starvation for others.
+
+**Solution Overview**
+
+The simulation utilizes goroutines and channels in Go to model the behavior of the philosophers. The main components of
+the solution include:
+
+- The `Chopstick` struct represents a chopstick and is implemented with a mutex to ensure exclusive access.
+
+- The `philosopher` struct represents a philosopher and contains an ID, as well as pointers to their left and right
+  chopsticks.
+
+- The `eat` method defines the behavior of a philosopher. The philosopher acquires a slot at the `host` channel, locks
+  their left and right chopsticks, eats for a specified duration, unlocks the chopsticks, and signals the host that they
+  have finished eating.
+
+- The `main` function initializes the chopsticks and philosophers, launches goroutines for each philosopher, and waits
+  for all philosophers to finish eating using a `sync.WaitGroup`.
+
+</details>
 
 ### Workspace Configuration
 
